@@ -7,6 +7,10 @@ export function RecipesShow(props) {
     props.onUpdateRecipe(props.recipe.id, params, () => event.target.reset());
   };
 
+  const handleClick = () => {
+    props.onDestroyRecipe(props.recipe);
+  };
+
   return (
     <div>
       <h1>Recipe Information</h1>
@@ -34,6 +38,7 @@ export function RecipesShow(props) {
           Instructions: <input defaultValue={props.recipe.instructions} name="height" type="text" />
         </div>
         <button type="submit">Update recipe</button>
+        <button onClick={handleClick}>Delete Recipe</button>
       </form>
     </div>
   );
