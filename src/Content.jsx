@@ -32,6 +32,23 @@ export function Content() {
     setCurrentRecipe(recipe);
   };
     
+  const handleUpdateRecipe = (id, params, successCallback) => {
+    console.log("handleUpdateRecipe", params);
+    axios.patch(`http://localhost:3000/recipes/${id}.json`, params).then((response) => {
+      setRecipes(
+        recipes.map((recipe) => {
+          if (recipe.id === response.data.id) {
+            return response.data;
+          } else {
+            return recipe;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
+    });
+  };
+
   const handleClose = () => {
     console.log("handleClose");
     setIsRecipesShowVisible(false);
@@ -44,7 +61,7 @@ export function Content() {
       <RecipesNew onCreateRecipe={handleCreateRecipe} />
       <RecipesIndex recipes={recipes} onShowRecipe={handleShowRecipe} />
       <Modal show={isRecipesShowVisible} onClose={handleClose}>
-        <RecipesShow recipe = {currentRecipe} />
+        <RecipesShow recipe = {currentRecipe} onUpdateRecipe = {handleUpdateRecipe} />
       </ Modal>
     </div>
   );
