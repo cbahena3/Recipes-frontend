@@ -12,6 +12,7 @@ export function RecipesIndex (props) {
            <p>Decription: {recipe.decription}</p>
            <p>Ingredients: {recipe.ingredients}</p>
            <p>Instructions: {recipe.instructions}</p>
+           <button onClick={() => props.onShowRecipe(recipe)}>More Info</button>
          </div>
        ))}
     </div>

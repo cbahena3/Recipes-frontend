@@ -3,6 +3,7 @@ export function RecipesNew (props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
+    // eslint-disable-next-line react/prop-types
     props.onCreateRecipe(params, () => event.target.reset());
   };
   return(
