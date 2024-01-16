@@ -4,6 +4,10 @@ import { RecipesIndex } from "./RecipesIndex"
 import { RecipesNew } from "./RecipesNew";
 import { Modal } from "./Modal";
 import { RecipesShow } from "./RecipesShow";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   const [recipes, setRecipes] = useState([]);
@@ -56,6 +60,7 @@ export function Content() {
 
   const handleDestroyRecipe = (recipe) => {
     console.log("handleDestroyRecipe", recipe);
+    // eslint-disable-next-line no-unused-vars
     axios.delete(`http://localhost:3000/recipes/${recipe.id}.json`).then((response) => {
       setRecipes(recipes.filter((p) => p.id !== recipe.id));
       handleClose();
@@ -66,8 +71,13 @@ export function Content() {
 
   return (
     <div>
-      <RecipesNew onCreateRecipe={handleCreateRecipe} />
-      <RecipesIndex recipes={recipes} onShowRecipe={handleShowRecipe} />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<LogoutLink />} />
+        <Route path="/recipes/new" element={<RecipesNew onCreateRecipe={handleCreateRecipe} />} />
+        <Route path="/" element={<RecipesIndex recipes={recipes} onShowRecipe={handleShowRecipe} />} />
+      </Routes>
       <Modal show={isRecipesShowVisible} onClose={handleClose}>
         <RecipesShow recipe = {currentRecipe} onUpdateRecipe = {handleUpdateRecipe} onDestroyRecipe={handleDestroyRecipe}  />
       </ Modal>
