@@ -1,0 +1,25 @@
+.recipe-show-container {
+  text-align: center;
+}
+
+.recipe-form {
+  width: 80%;
+  /* Adjust the width of the form container */
+  margin: auto;
+  /* Center the form horizontally */
+}
+
+.button-container {
+  margin-top: 20px;
+  /* Adjust the top margin for spacing */
+}
+
+/* Additional styling for buttons if needed */
+.button-container button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 13%;
+  text-transform: capitalize;
+  /* Adjust the right margin for spacing between buttons */
+}

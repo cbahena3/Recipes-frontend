@@ -36,7 +36,7 @@ export function Login() {
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <div>
           Email: <input name="email" type="email" />
         </div>

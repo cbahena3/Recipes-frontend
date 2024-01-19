@@ -30,7 +30,7 @@ export function Signup() {
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div >
           Name: <input name="name" type="text" />
         </div>
         <div>
@@ -47,3 +47,4 @@ export function Signup() {
     </div>
   );
 }
+

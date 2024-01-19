@@ -1,4 +1,8 @@
 /* eslint-disable react/prop-types */
+import "./RecipesShow.css";
+
+
+
 export function RecipesShow(props) {
 
   const handleSubmit = (event) => {
@@ -12,7 +16,7 @@ export function RecipesShow(props) {
   };
 
   return (
-    <div>
+    <div className="recipe-show-container">
       <h1>Recipe Information</h1>
       <h2>{props.recipe.name}</h2>
       <h2>ID: {props.recipe.id}</h2>
@@ -21,7 +25,7 @@ export function RecipesShow(props) {
       <p>Ingredients: {props.recipe.ingredients}</p>
       <p>Instructions: {props.recipe.instructions}</p>
 
-      <form onSubmit={handleSubmit}>
+      <form className="recipe-form" onSubmit={handleSubmit}>
         <div>
           Name: <input defaultValue={props.recipe.name} name="name" type="text" />
         </div>
@@ -37,8 +41,11 @@ export function RecipesShow(props) {
         <div>
           Instructions: <input defaultValue={props.recipe.instructions} name="height" type="text" />
         </div>
-        <button type="submit">Update recipe</button>
-        <button onClick={handleClick}>Delete Recipe</button>
+        <div  className="button-container">
+          <button type="submit">Update recipe</button>
+          <br />
+          <button onClick={handleClick}>Delete Recipe</button>
+        </div>
       </form>
     </div>
   );
