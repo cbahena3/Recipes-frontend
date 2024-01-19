@@ -41,7 +41,7 @@ export function Header () {
               <li className="nav-item">
                 <a className="nav-link" href="/recipes/new">Create Recipe</a>
               </li>
-              {jwtExists !== true && (
+              {jwtExists !== true ? (
                 <>
                   <li className="nav-item">
                     <a className="nav-link" href="/signup">Signup</a>
@@ -50,12 +50,16 @@ export function Header () {
                     <a className="nav-link" href="/login">Login</a>
                   </li>
                 </>
+              ) : (
+                <li className="nav-item">
+                  <a className="nav-link" onClick={handleClick} href="/logout">Logout</a>
+                </li>
               )}
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" 
                 onClick={handleClick}
                 href="/logout">Logout</a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
