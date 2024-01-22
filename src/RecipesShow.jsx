@@ -21,7 +21,7 @@ export function RecipesShow(props) {
       <h2>{props.recipe.name}</h2>
       <h2>ID: {props.recipe.id}</h2>
       <img src={props.recipe.image} />
-      <p>Decription: {props.recipe.decription}</p>
+      <p>Description: {props.recipe.description}</p>
       <p>Ingredients: {props.recipe.ingredients}</p>
       <p>Instructions: {props.recipe.instructions}</p>
 
@@ -30,16 +30,16 @@ export function RecipesShow(props) {
           Name: <input defaultValue={props.recipe.name} name="name" type="text" />
         </div>
         <div>
-          Image: <input defaultValue={props.recipe.image} name="url" type="text" />
+          Image: <input defaultValue={props.recipe.image} name="image" type="text" />
         </div>
         <div>
-          Description: <input defaultValue={props.recipe.description} name="width" type="text" />
+          Description: <input defaultValue={props.recipe.description} name="description" type="text" />
         </div>
         <div>
-          Ingredients: <input defaultValue={props.recipe.ingredients} name="height" type="text" />
+          Ingredients: <input defaultValue={props.recipe.ingredients} name="ingredients" type="text" />
         </div>
         <div>
-          Instructions: <input defaultValue={props.recipe.instructions} name="height" type="text" />
+          Instructions: <input defaultValue={props.recipe.instructions} name="instructions" type="text" />
         </div>
         <div  className="button-container">
           <button type="submit">Update recipe</button>

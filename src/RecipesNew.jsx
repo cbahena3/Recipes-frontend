@@ -5,6 +5,7 @@ export function RecipesNew (props) {
     const params = new FormData(event.target);
     // eslint-disable-next-line react/prop-types
     props.onCreateRecipe(params, () => event.target.reset());
+    window.location.href = "/";
   };
   return(
     <div>

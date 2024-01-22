@@ -11,7 +11,7 @@ export function RecipesIndex (props) {
            <h2>{recipe.name}</h2>
            {/* <h2>ID: {recipe.id}</h2> */}
            <img src={recipe.image}/>
-           <p>Decription: {recipe.decription}</p>
+           <p>Description: {recipe.description}</p>
            <p>Ingredients: {recipe.ingredients}</p>
            <p>Instructions: {recipe.instructions}</p>
            <button onClick={() => props.onShowRecipe(recipe)}>More Info</button>

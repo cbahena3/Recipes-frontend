@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./Header.css";
 
 export function Header () {
   const [jwtExists, setJwtExists] = useState(localStorage.getItem("jwt") !== null ?   true : false)

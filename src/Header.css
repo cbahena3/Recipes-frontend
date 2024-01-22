@@ -1,0 +1,22 @@
+header {
+  background-color: #1e0000;
+  padding: 5px;
+  color: white;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+
+.nav-item {
+  font-size: 18px;
+}
+
+.nav-link {
+  margin: 0 10px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
